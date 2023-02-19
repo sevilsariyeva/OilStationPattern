@@ -8,6 +8,7 @@ namespace OilStationPattern.Models
 {
     public class Oil
     {
+        public int OilId { get; set; }
         public string OilName { get; set; }
         public decimal Price { get; set; }
         public override string ToString()

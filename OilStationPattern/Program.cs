@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OilStationPattern.Presenters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace OilStationPattern
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            var view = new MainView();
+            var presenter = new MainPresenter(view);
             Application.Run(new MainView());
         }
     }

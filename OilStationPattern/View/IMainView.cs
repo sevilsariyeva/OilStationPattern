@@ -11,8 +11,10 @@ namespace OilStationPattern.View
     public interface IMainView
     {
         EventHandler<EventArgs> SelectionChange { get; set; }
-        List<Oil> Oils { set; }
+        EventHandler<EventArgs> LoadMain { get; set; }
         Oil SelectedOil { get; }
+        List<Oil> Oils { set; }
+        ComboBox OilComboBoxText { get; set; }
         string PriceText { get; set; }
         string QuantityText { get; set; }
         string QuantumText { get; set; }

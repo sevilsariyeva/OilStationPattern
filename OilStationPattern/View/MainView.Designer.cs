@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.totalamountLbl = new System.Windows.Forms.Label();
             this.priceLbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +115,7 @@
             this.quantumBtn.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.quantumBtn.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.quantumBtn.UseVisualStyleBackColor = false;
+            this.quantumBtn.CheckedChanged += new System.EventHandler(this.quantumBtn_CheckedChanged);
             // 
             // quantityBtn
             // 
@@ -136,6 +138,7 @@
             this.quantityBtn.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.quantityBtn.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.quantityBtn.UseVisualStyleBackColor = false;
+            this.quantityBtn.CheckedChanged += new System.EventHandler(this.quantityBtn_CheckedChanged);
             // 
             // quantityTxtb
             // 
@@ -144,6 +147,7 @@
             this.quantityTxtb.Name = "quantityTxtb";
             this.quantityTxtb.Size = new System.Drawing.Size(91, 20);
             this.quantityTxtb.TabIndex = 4;
+            this.quantityTxtb.TextChanged += new System.EventHandler(this.quantityTxtb_TextChanged);
             // 
             // quantumTxtb
             // 
@@ -152,6 +156,7 @@
             this.quantumTxtb.Name = "quantumTxtb";
             this.quantumTxtb.Size = new System.Drawing.Size(91, 20);
             this.quantumTxtb.TabIndex = 4;
+            this.quantumTxtb.TextChanged += new System.EventHandler(this.quantumTxtb_TextChanged);
             // 
             // label3
             // 
@@ -159,7 +164,7 @@
             this.label3.BackColor = System.Drawing.Color.OrangeRed;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(135, 332);
+            this.label3.Location = new System.Drawing.Point(135, 336);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(243, 45);
             this.label3.TabIndex = 5;
@@ -170,7 +175,7 @@
             this.totalamountLbl.AutoSize = true;
             this.totalamountLbl.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.totalamountLbl.ForeColor = System.Drawing.Color.OrangeRed;
-            this.totalamountLbl.Location = new System.Drawing.Point(449, 332);
+            this.totalamountLbl.Location = new System.Drawing.Point(449, 337);
             this.totalamountLbl.Name = "totalamountLbl";
             this.totalamountLbl.Size = new System.Drawing.Size(0, 45);
             this.totalamountLbl.TabIndex = 6;
@@ -183,6 +188,19 @@
             this.priceLbl.Name = "priceLbl";
             this.priceLbl.Size = new System.Drawing.Size(121, 21);
             this.priceLbl.TabIndex = 7;
+            this.priceLbl.TextChanged += new System.EventHandler(this.priceLbl_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.OrangeRed;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(612, 336);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 45);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "manat";
             // 
             // MainView
             // 
@@ -192,6 +210,7 @@
             this.ClientSize = new System.Drawing.Size(834, 386);
             this.Controls.Add(this.priceLbl);
             this.Controls.Add(this.totalamountLbl);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.quantumTxtb);
             this.Controls.Add(this.quantityTxtb);
@@ -223,6 +242,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label totalamountLbl;
         private System.Windows.Forms.Label priceLbl;
+        private System.Windows.Forms.Label label4;
     }
 }
 

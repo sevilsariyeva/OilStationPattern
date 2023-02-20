@@ -12,6 +12,8 @@ namespace OilStationPattern.View
     {
         EventHandler<EventArgs> SelectionChange { get; set; }
         EventHandler<EventArgs> LoadMain { get; set; }
+        EventHandler<EventArgs> QuantityChange { get; set; }
+        EventHandler<EventArgs> QuantumChange { get; set; }
         Oil SelectedOil { get; }
         List<Oil> Oils { set; }
         ComboBox OilComboBoxText { get; set; }

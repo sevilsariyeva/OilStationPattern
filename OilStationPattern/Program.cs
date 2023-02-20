@@ -19,7 +19,7 @@ namespace OilStationPattern
             Application.SetCompatibleTextRenderingDefault(false);
             var view = new MainView();
             var presenter = new MainPresenter(view);
-            Application.Run(new MainView());
+            Application.Run(view);
         }
     }
 }

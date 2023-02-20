@@ -39,39 +39,55 @@ namespace OilStationPattern.Presenters
         {
             _view = view;
             _db = new OilContext();
-            
-            // _view.OilComboBoxText.Items.Add(oil1);
-            //if (_db.Oils.Any(d => d.OilId != oil1.OilId && d.OilId != oil2.OilId))
-            //{
-            //
+            LoadAllData();
             _view.SelectionChange += ViewSelectionChange;
             _view.LoadMain += ViewLoadMain;
-           
+            _view.QuantityChange += ViewQuantityChange;
+            _view.QuantumChange += ViewQuantumChange;
+
         }
 
+        private void ViewQuantumChange(object sender, EventArgs e)
+        {
+            if (_view.QuantumText != String.Empty)
+            {
+                _view.TotalAmountText = decimal.Parse(_view.QuantumText).ToString();
+            }
+            else
+            {
+                _view.TotalAmountText = "0.00";
+            }
+        }
+
+        private void ViewQuantityChange(object sender, EventArgs e)
+        {
+            if (_view.QuantityText != String.Empty)
+            {
+                _view.TotalAmountText = (decimal.Parse(_view.QuantityText) * decimal.Parse(_view.PriceText)).ToString();
+            }
+            else
+            {
+                _view.TotalAmountText = "0.00";
+            }
+
+        }
+
+        private void LoadAllData()
+        {
+            if (!_db.Oils.Any())
+            {
+                _db.Oils.AddRange(oils);
+                _db.SaveChanges();
+            }
+        }
         private void ViewLoadMain(object sender, EventArgs e)
         {
-            var oil1 = new Oil
-            {
-                OilName = "AI-92",
-                Price = 1
-            };
-            var oil2 = new Oil
-            {
-                OilName = "AI-95",
-                Price = 2
-            };
-            _db.Oils.Add(oil1);
-            _db.Oils.Add(oil2);
-
-            _db.SaveChanges();
             var myoils = _db.Oils.ToList();
             _view.Oils = myoils;
         }
 
         private void ViewSelectionChange(object sender, EventArgs e)
         {
-            
             var oil = _view.SelectedOil;
             _view.PriceText = oil.Price.ToString();
         }

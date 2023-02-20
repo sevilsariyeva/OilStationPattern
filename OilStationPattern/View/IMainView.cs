@@ -16,7 +16,6 @@ namespace OilStationPattern.View
         EventHandler<EventArgs> QuantumChange { get; set; }
         Oil SelectedOil { get; }
         List<Oil> Oils { set; }
-        ComboBox OilComboBoxText { get; set; }
         string PriceText { get; set; }
         string QuantityText { get; set; }
         string QuantumText { get; set; }

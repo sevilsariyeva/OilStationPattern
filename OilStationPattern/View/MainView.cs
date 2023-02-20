@@ -63,7 +63,6 @@ namespace OilStationPattern
             }
         }
 
-        public ComboBox OilComboBoxText { get => oilComboBox;set=> oilComboBox = value; }
         public string PriceText { get => priceLbl.Text; set => priceLbl.Text = value; }
         public string QuantityText { get => quantityTxtb.Text; set => quantityTxtb.Text = value; }
         public string QuantumText { get => quantumTxtb.Text; set => quantumTxtb.Text = value; }
